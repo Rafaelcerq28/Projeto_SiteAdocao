@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <section class="feature_product_area section_gap">
+        <section>
             <div class="main_box">
                 <div class="container-fluid">
                     <div class="row">
