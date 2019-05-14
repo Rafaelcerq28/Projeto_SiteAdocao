@@ -9,7 +9,21 @@ package br.com.siteadocao.model;
  *
  * @author Rafael
  */
-class Candidato {
+public class Candidato {
+
+    public Candidato() {
+    }
+
+    public Candidato(String nome, String endereco, String cidade, String estado, String email, String telefone, String login, String senha) {
+        this.nome = nome;
+        this.endereco = endereco;
+        this.cidade = cidade;
+        this.estado = estado;
+        this.email = email;
+        this.telefone = telefone;
+        this.login = login;
+        this.senha = senha;
+    }
     
     private int id;
     private String nome;

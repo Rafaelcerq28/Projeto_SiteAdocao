@@ -5,6 +5,8 @@
  */
 package br.com.siteadocao.controler;
 
+import br.com.siteadocao.dao.DaoCandidato;
+import br.com.siteadocao.model.Candidato;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -12,14 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//-----------------------------------------------------------------
-//-----------------------------------------------------------------
-//------                                                     ------
-//------    TO DO: Criar metodo POST p/ cadastrar usuario    ------
-//------            >Registration.jsp                        ------
-//------                                                     ------
-//-----------------------------------------------------------------
-//-----------------------------------------------------------------
+
 
 /**
  *
@@ -68,6 +63,19 @@ public class CadastrarCandidato extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
+        String nome = request.getParameter("nome");
+        String endereco =request.getParameter("endereco");
+        String cidade = request.getParameter("cidade");
+        String estado = request.getParameter("estado");
+        String email = request.getParameter("email");
+        String telefone = request.getParameter("telefone");
+        String login = request.getParameter("login");
+        String senha = request.getParameter("senha");
+        
+        Candidato candidato = new Candidato(nome,endereco,cidade,estado,email,telefone,login,senha);
+        DaoCandidato daoCandidato = new DaoCandidato();
+        daoCandidato.save(candidato);
     }
 
     /**

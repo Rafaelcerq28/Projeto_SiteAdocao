@@ -61,28 +61,28 @@
                             <h3>Criar uma Conta</h3>
                             <form class="row login_form" action="CadastrarCandidato" method="post" id="contactForm">
                                 <div class="col-md-12 form-group">
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                                    <input type="text" class="form-control" id="name" name="nome" placeholder="Nome">
                                 </div>
                                 <div class="col-md-12 form-group">
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="Endereco">
+                                    <input type="text" class="form-control" id="email" name="endereco" placeholder="Endereco">
                                 </div>
                                 <div class="col-md-12 form-group">
-                                    <input type="text" class="form-control" id="password" name="password" placeholder="Cidade">
+                                    <input type="text" class="form-control" id="password" name="cidade" placeholder="Cidade">
                                 </div>
                                 <div class="col-md-12 form-group">
-                                    <input type="text" class="form-control" id="pass" name="pass" placeholder="Estado">
+                                    <input type="text" class="form-control" id="pass" name="estado" placeholder="Estado">
                                 </div>
                                 <div class="col-md-12 form-group">
-                                    <input type="text" class="form-control" id="pass" name="pass" placeholder="Email">
+                                    <input type="email" class="form-control" id="pass" name="email" placeholder="Email">
                                 </div>
                                 <div class="col-md-12 form-group">
-                                    <input type="text" class="form-control" id="pass" name="pass" placeholder="Telefone">
+                                    <input type="text" class="form-control" id="pass" name="telefone" placeholder="Telefone">
                                 </div>
                                 <div class="col-md-12 form-group">
-                                    <input type="text" class="form-control" id="pass" name="pass" placeholder="Login">
+                                    <input type="text" class="form-control" id="pass" name="login" placeholder="Login">
                                 </div>
                                 <div class="col-md-12 form-group">
-                                    <input type="text" class="form-control" id="pass" name="pass" placeholder="Senha">
+                                    <input type="text" class="form-control" id="pass" name="senha" placeholder="Senha">
                                 </div>
                                 
                                 <div class="col-md-12 form-group">
