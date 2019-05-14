@@ -19,7 +19,7 @@
                         <div class="hot_deal_box">
                             <img class="img-fluid" src="img/product/hot_deals/imgCatDeal.jpeg" alt="">
                             <div class="content">
-                                <h2>Temos diversos gatos precisando da sua ajuda!</h2>
+                                <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h2>
                                 <p>Clique aqui</p>
                             </div>
                             <a class="hot_deal_link" href="#"></a>
