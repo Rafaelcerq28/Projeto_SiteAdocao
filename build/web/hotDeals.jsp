@@ -17,10 +17,10 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="hot_deal_box">
-                            <img class="img-fluid" src="img/product/hot_deals/imgCatDeal" alt="">
+                            <img class="img-fluid" src="img/product/hot_deals/imgCatDeal.jpeg" alt="">
                             <div class="content">
-                                <h2>Hot Deals of this Month</h2>
-                                <p>shop now</p>
+                                <h2>Temos diversos gatos precisando da sua ajuda!</h2>
+                                <p>Clique aqui</p>
                             </div>
                             <a class="hot_deal_link" href="#"></a>
                         </div>
@@ -28,7 +28,7 @@
 
                     <div class="col-lg-6">
                         <div class="hot_deal_box">
-                            <img class="img-fluid" src="img/product/hot_deals/imgDogDeal" alt="">
+                            <img class="img-fluid" src="img/product/hot_deals/imgDogDeal.jpeg" alt="">
                             <div class="content">
                                 <h2>Hot Deals of this Month</h2>
                                 <p>shop now</p>
