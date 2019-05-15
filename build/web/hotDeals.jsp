@@ -19,8 +19,8 @@
                         <div class="hot_deal_box">
                             <img class="img-fluid" src="img/product/hot_deals/imgCatDeal.jpeg" alt="">
                             <div class="content">
-                                <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h2>
-                                <p>Clique aqui</p>
+                                <h2>Gatynneos</h2>
+                                <p></p>
                             </div>
                             <a class="hot_deal_link" href="#"></a>
                         </div>
@@ -30,8 +30,8 @@
                         <div class="hot_deal_box">
                             <img class="img-fluid" src="img/product/hot_deals/imgDogDeal.jpeg" alt="">
                             <div class="content">
-                                <h2>Hot Deals of this Month</h2>
-                                <p>shop now</p>
+                                <h2>Dogynneos</h2>
+                                <p></p>
                             </div>
                             <a class="hot_deal_link" href="#"></a>
                         </div>

@@ -17,15 +17,15 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="main_title">
-                            <h2>Featured Products</h2>
-                            <p>Who are in extremely love with eco friendly system.</p>
+                            <h2>Bichanos que estão te aguardando! *--*</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col col1">
                             <div class="f_p_item">
                                 <div class="f_p_img">
-                                    <img class="img-fluid" src="img/product/feature-product/f-p-1.jpg" alt="">
+                                    <img class="img-fluid" src="img/product/feature-product/Img/Cats/cat-1.jpeg" alt="">
                                     <div class="p_icon">
                                         <a href="#">
                                             <i class="lnr lnr-heart"></i>
@@ -44,7 +44,7 @@
                         <div class="col col2">
                             <div class="f_p_item">
                                 <div class="f_p_img">
-                                    <img class="img-fluid" src="img/product/feature-product/f-p-2.jpg" alt="">
+                                    <img class="img-fluid" src="img/product/feature-product/Img/Dogs/dog-3.jpg" alt="">
                                     <div class="p_icon">
                                         <a href="#">
                                             <i class="lnr lnr-heart"></i>
@@ -63,7 +63,7 @@
                         <div class="col col3">
                             <div class="f_p_item">
                                 <div class="f_p_img">
-                                    <img class="img-fluid" src="img/product/feature-product/f-p-3.jpg" alt="">
+                                    <img class="img-fluid" src="img/product/feature-product/Img/Cats/cat-3.jpg" alt="">
                                     <div class="p_icon">
                                         <a href="#">
                                             <i class="lnr lnr-heart"></i>
@@ -82,7 +82,7 @@
                         <div class="col col4">
                             <div class="f_p_item">
                                 <div class="f_p_img">
-                                    <img class="img-fluid" src="img/product/feature-product/f-p-4.jpg" alt="">
+                                    <img class="img-fluid" src="img/product/feature-product/Img/Dogs/dog-5.jpg" alt="">
                                     <div class="p_icon">
                                         <a href="#">
                                             <i class="lnr lnr-heart"></i>
@@ -101,7 +101,7 @@
                         <div class="col col5">
                             <div class="f_p_item">
                                 <div class="f_p_img">
-                                    <img class="img-fluid" src="img/product/feature-product/f-p-5.jpg" alt="">
+                                    <img class="img-fluid" src="img/product/feature-product/Img/Cats/cat-5.jpg" alt="">
                                     <div class="p_icon">
                                         <a href="#">
                                             <i class="lnr lnr-heart"></i>
@@ -121,7 +121,7 @@
                         <div class="col col6">
                             <div class="f_p_item">
                                 <div class="f_p_img">
-                                    <img class="img-fluid" src="img/product/feature-product/f-p-5.jpg" alt="">
+                                    <img class="img-fluid" src="img/product/feature-product/Img/Dogs/dog-7.jpg" alt="">
                                     <div class="p_icon">
                                         <a href="#">
                                             <i class="lnr lnr-heart"></i>
@@ -141,7 +141,7 @@
                         <div class="col col7">
                             <div class="f_p_item">
                                 <div class="f_p_img">
-                                    <img class="img-fluid" src="img/product/feature-product/f-p-4.jpg" alt="">
+                                    <img class="img-fluid" src="img/product/feature-product/Img/Cats/cat-7.jpg" alt="">
                                     <div class="p_icon">
                                         <a href="#">
                                             <i class="lnr lnr-heart"></i>
@@ -161,7 +161,7 @@
                         <div class="col col8">
                             <div class="f_p_item">
                                 <div class="f_p_img">
-                                    <img class="img-fluid" src="img/product/feature-product/f-p-5.jpg" alt="">
+                                    <img class="img-fluid" src="img/product/feature-product/Img/Dogs/dog-8.jpg" alt="">
                                     <div class="p_icon">
                                         <a href="#">
                                             <i class="lnr lnr-heart"></i>
@@ -180,7 +180,7 @@
                         <div class="col col9">
                             <div class="f_p_item">
                                 <div class="f_p_img">
-                                    <img class="img-fluid" src="img/product/feature-product/f-p-1.jpg" alt="">
+                                    <img class="img-fluid" src="img/product/feature-product/Img/Cats/cat-9.jpg" alt="">
                                     <div class="p_icon">
                                         <a href="#">
                                             <i class="lnr lnr-heart"></i>
@@ -199,7 +199,7 @@
                         <div class="col col10">
                             <div class="f_p_item">
                                 <div class="f_p_img">
-                                    <img class="img-fluid" src="img/product/feature-product/f-p-4.jpg" alt="">
+                                    <img class="img-fluid" src="img/product/feature-product/Img/Dogs/dog-10.jpg" alt="">
                                     <div class="p_icon">
                                         <a href="#">
                                             <i class="lnr lnr-heart"></i>
@@ -215,38 +215,6 @@
                                 <h5>$150.00</h5>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="row">
-                        <nav class="cat_page mx-auto" aria-label="Page navigation example">
-                            <ul class="pagination">
-                                <li class="page-item">
-                                    <a class="page-link" href="#">
-                                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                                <li class="page-item active">
-                                    <a class="page-link" href="#">01</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">02</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">03</a>
-                                </li>
-                                <li class="page-item blank">
-                                    <a class="page-link" href="#">...</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">09</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">
-                                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
                     </div>
                 </div>
             </div>

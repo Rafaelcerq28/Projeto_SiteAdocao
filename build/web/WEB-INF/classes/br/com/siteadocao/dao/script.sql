@@ -1,4 +1,4 @@
-CREATE DATABASE sitedoacaodb;
+CREATE DATABASE sitedoacaodb1;
 
 CREATE TABLE pet ( 
 	id INT(255) NOT NULL AUTO_INCREMENT , 
@@ -11,7 +11,9 @@ CREATE TABLE pet (
 	estado VARCHAR(20) NOT NULL , 
 	email VARCHAR(100) NOT NULL , 
 	telefone VARCHAR(20) NOT NULL , 
-	adotado BOOLEAN NOT NULL , 
+	adotado BOOLEAN NOT NULL ,
+	caminho_imagem VARCHAR(250), 
+	descricao VARCHAR(255),
 	PRIMARY KEY (id)
 );
 

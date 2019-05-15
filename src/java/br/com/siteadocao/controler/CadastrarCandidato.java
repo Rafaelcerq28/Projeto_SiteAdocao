@@ -9,6 +9,9 @@ import br.com.siteadocao.dao.DaoCandidato;
 import br.com.siteadocao.model.Candidato;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -60,22 +63,39 @@ public class CadastrarCandidato extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        try {
+            processRequest(request, response);
+            
+            String nome = request.getParameter("nome");
+            String endereco =request.getParameter("endereco");
+            String cidade = request.getParameter("cidade");
+            String estado = request.getParameter("estado");
+            String email = request.getParameter("email");
+            String telefone = request.getParameter("telefone");
+            String login = request.getParameter("login");
+            String senha = request.getParameter("senha");
+            
+            Candidato candidato = new Candidato(nome,endereco,cidade,estado,email,telefone,login,senha);
+            DaoCandidato daoCandidato = new DaoCandidato();
+            daoCandidato.save(candidato);
+            request.setAttribute("mensagem", "Cadastro Realizado com sucesso");
+        } catch (ServletException ex) {
+            request.setAttribute("mensagem", "Não foi possível se comunicar com o banco de dados!");
+             RequestDispatcher redireciona = request.getRequestDispatcher("mensagem.jsp");
+             redireciona.forward(request, response);
+        } catch (IOException ex) {
+            request.setAttribute("mensagem", "Não foi possível cadastrar o usuario!");
+            RequestDispatcher redireciona = request.getRequestDispatcher("mensagem.jsp");
+            redireciona.forward(request, response);
+        } catch (Exception e){
+            request.setAttribute("mensagem", "Não foi possível cadastrar o usuario!");
+            RequestDispatcher redireciona = request.getRequestDispatcher("mensagem.jsp");
+            redireciona.forward(request, response);
+        }
         
-        String nome = request.getParameter("nome");
-        String endereco =request.getParameter("endereco");
-        String cidade = request.getParameter("cidade");
-        String estado = request.getParameter("estado");
-        String email = request.getParameter("email");
-        String telefone = request.getParameter("telefone");
-        String login = request.getParameter("login");
-        String senha = request.getParameter("senha");
-        
-        Candidato candidato = new Candidato(nome,endereco,cidade,estado,email,telefone,login,senha);
-        DaoCandidato daoCandidato = new DaoCandidato();
-        daoCandidato.save(candidato);
+        RequestDispatcher redireciona = request.getRequestDispatcher("mensagem.jsp");
+        redireciona.forward(request, response);
     }
 
     /**

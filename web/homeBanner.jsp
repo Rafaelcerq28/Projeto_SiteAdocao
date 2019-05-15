@@ -18,11 +18,10 @@
                 <div class="container">
                     <div class="banner_content row">
                         <div class="offset-lg-2 col-lg-8">
-                            <h3>Fashion for
-                                <br />Upcoming Winter</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                                aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                            <a class="white_bg_btn" href="#">View Collection</a>
+                            <h3>Amigo
+                                <br />Não se Compra</h3>
+                            <p>Ao escolher adotar, você vai oferecer a ele um lar – ou seja, uma nova oportunidade de viver bem e feliz, além de ganhar um companheiro por muitos e muitos anos!</p>
+                            
                         </div>
                     </div>
                 </div>

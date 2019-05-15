@@ -18,7 +18,7 @@ public static final String SERVIDOR = "localhost";
    public static final String PORTA    = "3306";
    public static final String USUARIO  = "root";
    public static final String SENHA  = "";
-   public static final String BANCO    = "sitedoacaodb";
+   public static final String BANCO    = "sitedoacaodb1";
     
     public Connection getConnection(){
         String url = "jdbc:mysql://" + SERVIDOR + ":" + PORTA + "/" + BANCO;
