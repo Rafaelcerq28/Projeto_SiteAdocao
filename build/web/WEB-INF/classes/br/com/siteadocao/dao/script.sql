@@ -5,6 +5,7 @@ CREATE TABLE pet (
 	nome VARCHAR(100) NOT NULL , 
 	tamanho VARCHAR(10) NOT NULL , 
 	raca VARCHAR(50) NOT NULL ,  
+        tipo VARCHAR(10) NOT NULL,
 	nome_responsavel VARCHAR(100) NOT NULL , 
 	endereco VARCHAR(100) NOT NULL , 
 	cidade VARCHAR(20) NOT NULL , 

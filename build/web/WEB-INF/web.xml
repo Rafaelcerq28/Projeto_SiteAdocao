@@ -4,9 +4,25 @@
         <servlet-name>CadastrarCandidato</servlet-name>
         <servlet-class>br.com.siteadocao.controler.CadastrarCandidato</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ExibirImg</servlet-name>
+        <servlet-class>br.com.siteadocao.controler.ExibirImg</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControleProductArea</servlet-name>
+        <servlet-class>br.com.siteadocao.controler.ControleProductArea</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CadastrarCandidato</servlet-name>
         <url-pattern>/CadastrarCandidato</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ExibirImg</servlet-name>
+        <url-pattern>/ExibirImg</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControleProductArea</servlet-name>
+        <url-pattern>/ControleProductArea</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
