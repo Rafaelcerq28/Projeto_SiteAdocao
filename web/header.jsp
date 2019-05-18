@@ -66,7 +66,7 @@
                                                 <li class="nav-item">
                                                     <a class="nav-link" href="category.html">Shop Category</a>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="single-product.html">Product Details</a>
+                                                    <a class="nav-link" href="single-product.jsp">Product Details</a>
                                                 <li class="nav-item">
                                                     <a class="nav-link" href="checkout.html">Product Checkout</a>
                                                 <li class="nav-item">

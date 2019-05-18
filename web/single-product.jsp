@@ -4,6 +4,7 @@
     Author     : Rafael
 --%>
 
+<%@page import="br.com.siteadocao.model.Pet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -38,6 +39,9 @@
         <%@include file="homeBannerProduto.jsp"%>
         <!--================End Home Banner Area =================-->
 
+        <%
+            Pet p = (Pet) request.getAttribute("pet");
+        %>
         <!--================Single Product Area =================-->
         <div class="product_image_area">
             <div class="container">
@@ -46,7 +50,7 @@
                         <div class="s_product_img">
                             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                                 <ol class="carousel-indicators">
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
+                                    <!--<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
                                         <img src="img/product/single-product/s-product-s-2.jpg" alt="">
                                     </li>
                                     <li data-target="#carouselExampleIndicators" data-slide-to="1">
@@ -54,25 +58,25 @@
                                     </li>
                                     <li data-target="#carouselExampleIndicators" data-slide-to="2">
                                         <img src="img/product/single-product/s-product-s-4.jpg" alt="">
-                                    </li>
+                                    </li>-->
                                 </ol>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
                                         <img class="d-block w-100" src="img/product/single-product/s-product-1.jpg" alt="First slide">
                                     </div>
-                                    <div class="carousel-item">
+                                    <!--<div class="carousel-item">
                                         <img class="d-block w-100" src="img/product/single-product/s-product-1.jpg" alt="Second slide">
                                     </div>
                                     <div class="carousel-item">
                                         <img class="d-block w-100" src="img/product/single-product/s-product-1.jpg" alt="Third slide">
-                                    </div>
+                                    </div>-->
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-5 offset-lg-1">
                         <div class="s_product_text">
-                            <h3>Faded SkyBlu Denim Jeans</h3>
+                            <h3><%out.print(p.getNome());%></h3>
                             <h2>$149.99</h2>
                             <ul class="list">
                                 <li>
@@ -484,11 +488,11 @@
         <!--================End Product Description Area =================-->
 
         <!--================ Subscription Area ================-->
-            <%@include file="subscriptionArea.jsp"%>
+        <%@include file="subscriptionArea.jsp"%>
         <!--================ End Subscription Area ================-->
 
         <!--================ start footer Area  =================-->
-            <%@include file="footer.jsp"%>
+        <%@include file="footer.jsp"%>
         <!--================ End footer Area  =================-->
 
 

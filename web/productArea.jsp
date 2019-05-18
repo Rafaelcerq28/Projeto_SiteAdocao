@@ -31,28 +31,26 @@
                             DaoPet daoPet = new DaoPet();
                             List<Pet> lstPet = (List) daoPet.get();
                             int i = 0;
-
+                            out.print(">>>>>>"+daoPet.get(1));
+                            
                             for (Pet p : lstPet) {  %>    
                         <div class="col col<%=i%>">
-
+                             
                             <div class="f_p_item">
                                 <div class="f_p_img">
                                     <img class="img-fluid" src="<%=p.getFoto()%>" alt="">
                                     
-
                                     <div class="p_icon">
-                                        <a href="#">
+                                        <!--<a href="#">-->                                           
+                                            <a href="AreaDoProduto?id=<%=p.getId()%>">
                                             <i class="lnr lnr-heart"></i>
                                         </a>
-                                        <!--<a href="#">
-                                            <i class="lnr lnr-cart"></i>
-                                        </a>-->
                                     </div>
                                 </div>
                                 <a href="#">
                                     <h4></h4>
                                 </a>
-                                <h5>$150.00</h5>
+                                <h5></h5>
                             </div>
                         </div>
                         <%

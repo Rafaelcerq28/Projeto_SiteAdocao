@@ -39,7 +39,34 @@ public class DaoPet implements Dao{
 
     @Override
     public Object get(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                 
+        try {
+            String sql = "select * from pet where id ="+id;
+            PreparedStatement stmt = new ConnectionFactory().getConnection().prepareStatement(sql);                      
+            ResultSet rs = stmt.executeQuery();
+            
+            Pet p = new Pet(
+                rs.getInt("id"),
+                rs.getString("nome"),
+                rs.getString("tamanho"),
+                rs.getString("raca"),
+                rs.getString("nome_responsavel"),
+                rs.getString("endereco"),
+                rs.getString("cidade"),
+                rs.getString("endereco"),
+                rs.getString("estado"),
+                rs.getString("email"),
+                rs.getString("telefone"),
+                rs.getBoolean("adotado"),
+                rs.getString("caminho_imagem"),
+                rs.getString("descricao")                   
+            );
+            
+            return p;
+        } catch (SQLException ex) {
+            Logger.getLogger(DaoPet.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }           
     }
 
     @Override
