@@ -73,7 +73,7 @@
                                                     <a class="nav-link" href="cart.html">Shopping Cart</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="confirmation.html">Confirmation</a>
+                                                    <a class="nav-link" href="confirmation.jsp">Confirmation</a>
                                                 </li>
                                             </ul>
                                         </li>

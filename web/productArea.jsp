@@ -21,7 +21,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="main_title">
-                            <h2>Bichanos que estão te aguardando! *--*</h2>
+                            <h2>Bichinhos que estão te aguardando! *--*</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </div>
                     </div>
@@ -31,11 +31,10 @@
                             DaoPet daoPet = new DaoPet();
                             List<Pet> lstPet = (List) daoPet.get();
                             int i = 0;
-                            out.print(">>>>>>"+daoPet.get(1));
+                            Pet p2 = (Pet) daoPet.get(2);
                             
                             for (Pet p : lstPet) {  %>    
                         <div class="col col<%=i%>">
-                             
                             <div class="f_p_item">
                                 <div class="f_p_img">
                                     <img class="img-fluid" src="<%=p.getFoto()%>" alt="">
@@ -48,9 +47,9 @@
                                     </div>
                                 </div>
                                 <a href="#">
-                                    <h4></h4>
-                                </a>
-                                <h5></h5>
+                                    <h4><%=p.getNome()%></h4>
+                                    
+                                </a>                               
                             </div>
                         </div>
                         <%
