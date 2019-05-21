@@ -59,7 +59,7 @@ public class Confirmacao extends HttpServlet {
         Pet p = (Pet) daoPet.get(id);
         
         request.setAttribute("pet", p);
-        RequestDispatcher redireciona = request.getRequestDispatcher("confirmacao.jsp");
+        RequestDispatcher redireciona = request.getRequestDispatcher("confirmation.jsp");
         redireciona.forward(request, response);
         
     }
