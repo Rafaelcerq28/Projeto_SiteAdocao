@@ -17,11 +17,10 @@
             <div class="banner_inner d-flex align-items-center" style="background-size: cover;">
                 <div class="container">
                     <div class="banner_content text-center">
-                        <h2>Single Product Page</h2>
+                        <h2>Detalhes</h2>
                         <div class="page_link">
-                            <a href="index.html">Home</a>
-                            <a href="category.html">Category</a>
-                            <a href="single-product.html">Product Details</a>
+                            <a href="index.jsp">Home</a>                           
+                            <a href="#">Detalhes do Pet</a>
                         </div>
                     </div>
                 </div>

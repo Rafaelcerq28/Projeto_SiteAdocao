@@ -6,9 +6,10 @@
 package br.com.siteadocao.controler;
 
 import br.com.siteadocao.dao.DaoPet;
-import br.com.siteadocao.model.Pet;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,21 +21,43 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Rafael
  */
-@WebServlet(name = "Confirmacao", urlPatterns = {"/Confirmacao"})
-public class Confirmacao extends HttpServlet {
+@WebServlet(name = "ControleCategoria", urlPatterns = {"/ControleCategoria"})
+public class ControleCategoria extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        
+        if (request.getParameter("acao").contains("tipo_cachorro")) {
+            DaoPet daoPet = new DaoPet();
+            String tipo = request.getParameter("tipo");
+            List lstPet = daoPet.getTipoAnimal(tipo);
+            if (lstPet.isEmpty()) {
+                request.setAttribute("mensagem", "Não há registros para serem exibidos!");
+                RequestDispatcher redireciona = request.getRequestDispatcher("mensagem.jsp");
+                redireciona.forward(request, response);
+            } else {
+                request.setAttribute("listaPets", lstPet);
+                RequestDispatcher redireciona = request.getRequestDispatcher("category.jsp");
+                redireciona.forward(request, response);
+            }
+        }
+        
+        if (request.getParameter("acao").contains("tipo_gato")) {
+            DaoPet daoPet = new DaoPet();
+            String tipo = request.getParameter("tipo");
+            List <Object> lstPet = daoPet.getTipoAnimal(tipo);
+            if (lstPet.isEmpty()) {
+                request.setAttribute("mensagem", "Não há registros para serem exibidos!");
+                RequestDispatcher redireciona = request.getRequestDispatcher("mensagem.jsp");
+                redireciona.forward(request, response);
+            } else {
+                request.setAttribute("listaPets", lstPet);
+                RequestDispatcher redireciona = request.getRequestDispatcher("category.jsp");
+                redireciona.forward(request, response);
+            }
+        }      
+                
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -50,18 +73,6 @@ public class Confirmacao extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        
-                
-        DaoPet daoPet = new DaoPet();
-        
-        int id = Integer.parseInt(request.getParameter("id"));
-        
-        Pet p = (Pet) daoPet.get(id);
-        
-        request.setAttribute("pet", p);
-        RequestDispatcher redireciona = request.getRequestDispatcher("confirmacao.jsp");
-        redireciona.forward(request, response);
-        
     }
 
     /**

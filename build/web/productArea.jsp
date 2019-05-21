@@ -31,7 +31,7 @@
                             DaoPet daoPet = new DaoPet();
                             List<Pet> lstPet = (List) daoPet.get();
                             int i = 0;
-                            Pet p2 = (Pet) daoPet.get(2);
+                            
                             
                             for (Pet p : lstPet) {  %>    
                         <div class="col col<%=i%>">
@@ -46,14 +46,15 @@
                                         </a>
                                     </div>
                                 </div>
-                                <a href="#">
+                               
                                     <h4><%=p.getNome()%></h4>
-                                    
-                                </a>                               
+                                    <h6><%=p.getCidade()%></h6>
+                                                              
                             </div>
                         </div>
                         <%
                                 i++;
+                                
                             }
                         %>
 

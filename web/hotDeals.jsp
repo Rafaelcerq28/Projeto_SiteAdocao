@@ -22,7 +22,7 @@
                                 <h2>Gatynneos</h2>
                                 <p></p>
                             </div>
-                            <a class="hot_deal_link" href="#"></a>
+                            <a class="hot_deal_link" href="ControleCategoria?acao=tipo_gato&tipo=gato"></a>
                         </div>
                     </div>
 
@@ -33,7 +33,7 @@
                                 <h2>Dogynneos</h2>
                                 <p></p>
                             </div>
-                            <a class="hot_deal_link" href="#"></a>
+                            <a class="hot_deal_link" href="ControleCategoria?acao=tipo_cachorro&tipo=cachorro"></a>
                         </div>
                     </div>
                 </div>

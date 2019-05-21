@@ -16,6 +16,10 @@
         <servlet-name>Confirmacao</servlet-name>
         <servlet-class>br.com.siteadocao.controler.Confirmacao</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ControleCategoria</servlet-name>
+        <servlet-class>br.com.siteadocao.controler.ControleCategoria</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CadastrarCandidato</servlet-name>
         <url-pattern>/CadastrarCandidato</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>Confirmacao</servlet-name>
         <url-pattern>/Confirmacao</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControleCategoria</servlet-name>
+        <url-pattern>/ControleCategoria</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

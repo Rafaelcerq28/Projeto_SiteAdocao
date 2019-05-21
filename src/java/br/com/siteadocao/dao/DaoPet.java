@@ -38,21 +38,6 @@ public class DaoPet implements Dao{
     }
 
     
-    public Object getDadosPet(int id) throws SQLException{
-            
-            String sql = "select nome, tipo, caminho_imagem from pet where id = ?";
-            PreparedStatement stmt = new ConnectionFactory().getConnection().prepareStatement(sql);                      
-            stmt.setInt(1, id);
-            ResultSet rs = stmt.executeQuery();
-            Pet p = new Pet();
-            while(rs.next()){
-                p.setNome(rs.getString("nome"));
-                p.setTipo(rs.getString("tipo"));
-                p.setFoto(rs.getString("caminho_imagem"));
-            }
-            return null;
-    }
-    
     @Override
     public Object get(int id) {
                  
@@ -77,7 +62,7 @@ public class DaoPet implements Dao{
                     p.setTelefone(rs.getString("telefone"));
                     p.setAdotado(rs.getBoolean("adotado"));
                     p.setFoto(rs.getString("caminho_imagem"));
-                    p.setRaca(rs.getString("descricao"));                          
+                    p.setDescricao(rs.getString("descricao"));                          
             }
             stmt.close();
             return p;          
@@ -86,7 +71,38 @@ public class DaoPet implements Dao{
             return null;
         }         
     }
-    
+        public List<Object> getTipoAnimal(String tipo) {
+           List<Object> lstPet = new ArrayList<>();
+        try{
+            String comando = "select * from pet where tipo = ?";
+            PreparedStatement stmt = new ConnectionFactory().getConnection().prepareStatement(comando);
+            stmt.setString(1, tipo);
+            ResultSet rs = stmt.executeQuery();
+            while(rs.next()){
+                Pet p = new Pet(
+                    rs.getInt("id"),
+                    rs.getString("nome"),
+                    rs.getString("tamanho"),
+                    rs.getString("raca"),
+                    rs.getString("tipo"),    
+                    rs.getString("nome_responsavel"),
+                    rs.getString("endereco"),
+                    rs.getString("cidade"),
+                    rs.getString("estado"),
+                    rs.getString("email"),
+                    rs.getString("telefone"),
+                    rs.getBoolean("adotado"),
+                    rs.getString("caminho_imagem"),
+                    rs.getString("descricao")                   
+                );
+                lstPet.add(p);
+            }
+            return lstPet;            
+        }catch(SQLException ex){
+            Logger.getLogger(DaoPet.class.getName()).log(Level.SEVERE,null,ex);
+            return null;
+        }
+    }
     @Override
     public List<Object> get() {
            List<Object> lstPet = new ArrayList<>();
@@ -101,10 +117,10 @@ public class DaoPet implements Dao{
                     rs.getString("nome"),
                     rs.getString("tamanho"),
                     rs.getString("raca"),
+                    rs.getString("tipo"),    
                     rs.getString("nome_responsavel"),
                     rs.getString("endereco"),
                     rs.getString("cidade"),
-                    rs.getString("endereco"),
                     rs.getString("estado"),
                     rs.getString("email"),
                     rs.getString("telefone"),

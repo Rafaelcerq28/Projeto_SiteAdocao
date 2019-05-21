@@ -61,22 +61,30 @@
                     </div>
                     <div class="col-lg-5 offset-lg-1">
                         <div class="s_product_text">
-                            <h3><%=p.getNome()%></h3>
-                            <h2>$149.99</h2>
+                            <h3><strong><%=p.getNome()%></strong></h3>
+                            <p style="margin-top: 30px;margin-bottom: 10px;"></p>
+                            <!--<h2>$149.99</h2>-->
                             <ul class="list">
-                                <li>
-                                    <a class="active" href="#">
-                                        <span>Tipo : <%=p.getTipo()%></span> </a>
+                                <li>                                  
+                                        <span><strong>Tipo : </strong><%=p.getTipo()%></span>
                                 </li>
-                                <li>
-                                    <a href="#">
-                                        <span>Availibility</span> : <%=p.getTipo()%></a>
+                                <li>                                   
+                                        <%
+                                        String status;
+                                        if(p.isAdotado() == true){
+                                           status = "Adotado"; 
+                                        }else{
+                                            status = "Aguardando adoção";
+                                        }
+                                        %>
+                                        <span><strong>Status : </strong><%=status%></span> 
                                 </li>
-                            </ul>
-                            
+                            </ul> 
+                            <p style="margin-top: 30px;margin-bottom: 10px;"></p>
+                            <span><strong>Descrição :</strong> <%=p.getDescricao()%></span>
                             <p></p>
                             <div class="card_area">
-                                <a class="main_btn" href="#"> Adote-Me! </a>
+                                <a class="main_btn" href="Confirmacao?id=<%=p.getId()%>"> Adote-Me! </a>
                             </div>
                         </div>
                     </div>

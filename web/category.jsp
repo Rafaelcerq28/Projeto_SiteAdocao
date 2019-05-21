@@ -1,14 +1,15 @@
 <%-- 
-    Document   : single-product
-    Created on : 15/05/2019, 19:28:52
+    Document   : category
+    Created on : 19/05/2019, 18:51:57
     Author     : Rafael
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
 <%@page import="br.com.siteadocao.model.Pet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
@@ -31,67 +32,67 @@
     <body>
 
         <!--================Header Menu Area =================-->
-        <%@include file= "header.jsp" %>
+        <%@include file="header.jsp"%>
         <!--================Header Menu Area =================-->
 
-
         <!--================Home Banner Area =================-->
-        <%@include file="homeBannerProduto.jsp"%>
-        <!--================End Home Banner Area =================-->
+        <section class="banner_area">
+            <div class="banner_inner d-flex align-items-center" style="background-size: cover;">
+                <div class="container">
+                    <div class="banner_content text-center">
+                        <h2>Shop Category Page</h2>
+                        <div class="page_link">
+                            <a href="index.jsp">Home</a>
+                            <a href="category.jsp">Category</a>
 
-        <%
-            Pet p = (Pet) request.getAttribute("pet");
-        %>
-        <!--================Single Product Area =================-->
-        <div class="product_image_area">
-            <div class="container">
-                <div class="row s_product_inner">
-                    <div class="col-lg-6">
-                        <div class="s_product_img">
-                            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                                <ol class="carousel-indicators">
-                                </ol>
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img class="d-block w-100" src="<%=p.getFoto()%>" alt="First slide">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 offset-lg-1">
-                        <div class="s_product_text">
-                            <h3><strong><%=p.getNome()%></strong></h3>
-                            <p style="margin-top: 30px;margin-bottom: 10px;"></p>
-                            <!--<h2>$149.99</h2>-->
-                            <ul class="list">
-                                <li>                                  
-                                        <span><strong>Tipo : </strong><%=p.getTipo()%></span>
-                                </li>
-                                <li>                                   
-                                        <%
-                                        String status;
-                                        if(p.isAdotado() == true){
-                                           status = "Adotado"; 
-                                        }else{
-                                            status = "Aguardando adoção";
-                                        }
-                                        %>
-                                        <span><strong>Status : </strong><%=status%></span> 
-                                </li>
-                            </ul> 
-                            <p style="margin-top: 30px;margin-bottom: 10px;"></p>
-                            <span><strong>Descrição :</strong> <%=p.getDescricao()%></span>
-                            <p></p>
-                            <div class="card_area">
-                                <a class="main_btn" href="Confirmacao?id=<%=p.getId()%>"> Adote-Me! </a>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!--================End Single Product Area =================-->
+        </section>
+        <!--================End Home Banner Area =================-->
+
+        <%
+            List<Pet> lstPet = (ArrayList) request.getAttribute("listaPets");
+        %>        
+
+        <!--================Category Product Area =================-->
+        <section class="cat_product_area section_gap">
+            <div class="container-fluid">
+                <div class="row flex-row-reverse">
+                    <div class="col-lg-12">
+                        <div class="latest_product_inner row">
+                            <%
+                                int i = 0;
+                                for (Pet p : lstPet) {
+                            %>                            
+                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                <div class="f_p_item">
+                                    <div class="f_p_img">
+                                        <img class="img-fluid" src="<%=p.getFoto()%>" alt="">
+                                        <div class="p_icon">
+                                            <a href="AreaDoProduto?id=<%=p.getId()%>">
+                                                <i class="lnr lnr-heart"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                        <h4><%=p.getNome()%></h4>
+                                    <h5><%=p.getCidade()+"-"+ p.getEstado()%></h5>
+                                </div>
+                            </div>
+                    <%  
+                            i++;
+                        }
+                    %> 
+                        </div>                       
+                    </div>
+                </div>
+
+                <div class="row">                   
+                </div>
+            </div>
+        </section>
+        <!--================End Category Product Area =================-->
 
         <!--================ Subscription Area ================-->
         <%@include file="subscriptionArea.jsp"%>
