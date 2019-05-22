@@ -86,7 +86,9 @@ public class ControleCandidato extends HttpServlet {
             DaoCandidato daoCandidato = new DaoCandidato();
             int id = Integer.parseInt(request.getParameter("id"));
             
-            Candidato c = new Candidato();
+            //Candidato c = new Candidato();
+            Candidato c = (Candidato) daoCandidato.get(id);
+            
             c.setId(id);
             c.setNome(request.getParameter("nome"));
             c.setEndereco(request.getParameter("endereco"));
