@@ -6,9 +6,13 @@
 package br.com.siteadocao.dao;
 import br.com.siteadocao.factory.ConnectionFactory;
 import br.com.siteadocao.model.Candidato;
+import br.com.siteadocao.model.Pet;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -48,17 +52,93 @@ public class DaoCandidato implements Dao{
 
     @Override
     public boolean update(Object object) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Candidato c  = (Candidato) object;
+        try{
+            String sql = "UPDATE CANDIDATO SET nome = ?, endereco = ?, cidade = ?, estado = ?, email = ?, telefone = ? where id = ?";
+            PreparedStatement stmt = new ConnectionFactory().getConnection().prepareStatement(sql);
+            stmt.setString(1, c.getNome());
+            stmt.setString(2, c.getEndereco());
+            stmt.setString(3, c.getCidade());
+            stmt.setString(4, c.getEstado());
+            stmt.setString(5, c.getEmail());
+            stmt.setString(6,c.getTelefone());
+            stmt.setInt(7, c.getId());
+            stmt.executeUpdate();
+            return true;
+        }catch(SQLException ex){
+            Logger.getLogger(DaoCandidato.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
     }
 
     @Override
     public boolean delete(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        try {
+            String sql = "delete from candidato where id = ?";
+            PreparedStatement stmt = new ConnectionFactory().getConnection().prepareStatement(sql);
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(DaoCandidato.class.getName()).log(Level.SEVERE, null, ex);
+        }          
+            return false;
     }
+    
+    public Object getLogin(String login) {
+        try {
+            String sql = "select * from candidato where login = ?";
+            PreparedStatement stmt = new ConnectionFactory().getConnection().prepareStatement(sql);
+            stmt.setString(1, login);
+            ResultSet rs = stmt.executeQuery();
+            Candidato c = new Candidato();
 
+            while (rs.next()) {
+                c.setId(rs.getInt("id"));
+                c.setNome(rs.getString("nome"));
+                c.setEndereco(rs.getString("endereco"));
+                c.setCidade(rs.getString("cidade"));
+                c.setEstado(rs.getString("estado"));
+                c.setEmail(rs.getString("email"));
+                c.setTelefone(rs.getString("telefone"));
+                c.setLogin(rs.getString("login"));
+                c.setSenha(rs.getString("senha"));
+            }
+            stmt.close();
+            return c;
+        } catch (SQLException ex) {
+            Logger.getLogger(DaoPet.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
+    
     @Override
     public Object get(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            String sql = "select * from candidato where id = ?";
+            PreparedStatement stmt = new ConnectionFactory().getConnection().prepareStatement(sql);
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+            Candidato c = new Candidato();
+
+            while (rs.next()) {
+                c.setId(rs.getInt("id"));
+                c.setNome(rs.getString("nome"));
+                c.setEndereco(rs.getString("endereco"));
+                c.setCidade(rs.getString("cidade"));
+                c.setEstado(rs.getString("estado"));
+                c.setEmail(rs.getString("email"));
+                c.setTelefone(rs.getString("telefone"));
+                c.setLogin(rs.getString("login"));
+                c.setSenha(rs.getString("senha"));
+            }
+            stmt.close();
+            return c;
+        } catch (SQLException ex) {
+            Logger.getLogger(DaoPet.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
     }
 
     @Override

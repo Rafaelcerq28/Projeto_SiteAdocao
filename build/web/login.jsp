@@ -4,6 +4,7 @@
     Author     : Rafael
 --%>
 
+<%@page import="br.com.siteadocao.dao.DaoCandidato"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -34,13 +35,13 @@
 
         <!--================Home Banner Area =================-->
         <section class="banner_area">
-            <div class="banner_inner d-flex align-items-center">
+            <div class="banner_inner d-flex align-items-center" style="background-size: cover;">
                 <div class="container">
                     <div class="banner_content text-center">
                         <h2>Login/Registrar</h2>
                         <div class="page_link">
-                            <a href="index.html">Home</a>
-                            <a href="login.html">Login</a>
+                            <a href="index.jsp">Home</a>
+                            <a href="login.jsp">Login</a>
                         </div>
                     </div>
                 </div>
@@ -62,15 +63,19 @@
                             </div>
                         </div>
                     </div>
+                    <%
+                    DaoCandidato daoCandidato = new DaoCandidato();
+                    
+                    %>
                     <div class="col-lg-6">
                         <div class="login_form_inner">
                             <h3>FAÇA SEU LOGIN PARA ENTRAR</h3>
-                            <form class="row login_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                            <form class="row login_form" action="ControleCandidato" method="post" id="contactForm" novalidate="novalidate">
                                 <div class="col-md-12 form-group">
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="Username">
+                                    <input type="text" class="form-control" id="name" name="login" placeholder="Username">
                                 </div>
                                 <div class="col-md-12 form-group">
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="Password">
+                                    <input type="text" class="form-control" id="name" name="senha" placeholder="Password">
                                 </div>
                                 <div class="col-md-12 form-group">
                                     <div class="creat_account">
@@ -79,7 +84,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-12 form-group">
-                                    <button type="submit" value="submit" class="btn submit_btn">ENTRAR</button>
+                                    <button type="submit" name="acao" value="loginCandidato" class="btn submit_btn">ENTRAR</button>
                                     <a href="#">Esqueceu sua senha?</a>
                                 </div>
                             </form>
@@ -89,7 +94,7 @@
             </div>
         </section>
         <!--================End Login Box Area =================-->
-
+        
         <!--================ Subscription Area ================-->
             <%@include file="subscriptionArea.jsp"%>
         <!--================ End Subscription Area ================-->

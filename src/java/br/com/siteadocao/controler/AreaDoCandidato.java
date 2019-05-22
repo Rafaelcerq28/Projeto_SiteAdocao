@@ -5,36 +5,32 @@
  */
 package br.com.siteadocao.controler;
 
+import br.com.siteadocao.dao.DaoCandidato;
 import br.com.siteadocao.dao.DaoPet;
-import br.com.siteadocao.model.Pet;
+import br.com.siteadocao.model.Candidato;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Rafael
+ * @author Rafael Cerqueira
  */
-@WebServlet(name = "Confirmacao", urlPatterns = {"/Confirmacao"})
-public class Confirmacao extends HttpServlet {
+public class AreaDoCandidato extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    
+    
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+
+        
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -51,15 +47,14 @@ public class Confirmacao extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         
-                
-        DaoPet daoPet = new DaoPet();
+        DaoCandidato daoCandidato = new DaoCandidato();
         
         int id = Integer.parseInt(request.getParameter("id"));
         
-        Pet p = (Pet) daoPet.get(id);
+        Candidato c = (Candidato) daoCandidato.get(id);
         
-        request.setAttribute("pet", p);
-        RequestDispatcher redireciona = request.getRequestDispatcher("confirmation.jsp");
+        request.setAttribute("candidato", c);
+        RequestDispatcher redireciona = request.getRequestDispatcher("tela-candidato.jsp");
         redireciona.forward(request, response);
         
     }
