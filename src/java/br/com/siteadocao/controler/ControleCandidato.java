@@ -15,6 +15,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -37,6 +38,10 @@ public class ControleCandidato extends HttpServlet {
                 Candidato c = (Candidato) daoCandidato.getLogin(login);
 
                 if(c.getSenha().equalsIgnoreCase(senha)){
+                    
+                    HttpSession session = request.getSession();
+                    session.setAttribute("usuario",c);
+                    
                     request.setAttribute("candidato", c);
                     RequestDispatcher redireciona = request.getRequestDispatcher("tela-candidato.jsp");
                     redireciona.forward(request, response);
@@ -109,6 +114,8 @@ public class ControleCandidato extends HttpServlet {
                 redireciona.forward(request, response);
             }
         }
+        
+        
         
         //FIM DO processRequest
     }

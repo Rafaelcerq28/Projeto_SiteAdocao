@@ -11,7 +11,7 @@ package br.com.siteadocao.model;
  */
 public class Pet {
 
-    public Pet(int id, String nome, String tamanho, String raca, String tipo, String nomeDono, String endereco, String cidade, String estado, String email, String telefone, boolean adotado, String foto, String Descricao) {
+    public Pet(int id, String nome, String tamanho, String raca, String tipo, String nomeDono, String endereco, String cidade, String estado, String email, String telefone, boolean adotado, String foto, String Descricao,String novoDono) {
         this.id = id;
         this.nome = nome;
         this.tamanho = tamanho;
@@ -26,6 +26,7 @@ public class Pet {
         this.adotado = adotado;
         this.foto = foto;
         this.Descricao = Descricao;
+        this.novoDono = novoDono;
     }
 
     
@@ -47,7 +48,7 @@ public class Pet {
     private boolean adotado;
     private String foto;
     private String Descricao;
-    
+    private String novoDono;
     public int getId() {
         return id;
     }
@@ -159,5 +160,13 @@ public class Pet {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    public String getNovoDono() {
+        return novoDono;
+    }
+
+    public void setNovoDono(String novoDono) {
+        this.novoDono = novoDono;
     }
 }

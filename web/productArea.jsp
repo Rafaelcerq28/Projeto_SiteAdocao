@@ -33,29 +33,34 @@
                             int i = 0;
                             
                             
-                            for (Pet p : lstPet) {  %>    
-                        <div class="col col<%=i%>">
-                            <div class="f_p_item">
-                                <div class="f_p_img">
-                                    <img class="img-fluid" src="<%=p.getFoto()%>" alt="">
-                                    
-                                    <div class="p_icon">
-                                        <!--<a href="#">-->                                           
-                                            <a href="AreaDoProduto?id=<%=p.getId()%>">
-                                            <i class="lnr lnr-heart"></i>
-                                        </a>
+                            for (Pet p : lstPet) {  
+                        
+                                if(p.isAdotado() == false){
+                        %>    
+                            
+                                    <div class="col col<%=i%>">
+                                    <div class="f_p_item">
+                                        <div class="f_p_img">
+                                            <img class="img-fluid" src="<%=p.getFoto()%>" alt="">
+
+                                            <div class="p_icon">
+                                                <!--<a href="#">-->                                           
+                                                    <a href="AreaDoProduto?id=<%=p.getId()%>">
+                                                    <i class="lnr lnr-heart"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                            <h4><%=p.getNome()%></h4>
+                                            <h6><%=p.getCidade()%></h6>
+
                                     </div>
                                 </div>
-                               
-                                    <h4><%=p.getNome()%></h4>
-                                    <h6><%=p.getCidade()%></h6>
-                                                              
-                            </div>
-                        </div>
                         <%
-                                i++;
+                                    i++;
                                 
-                            }
+                                }
+                            } 
                         %>
 
                     </div>

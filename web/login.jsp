@@ -64,8 +64,7 @@
                         </div>
                     </div>
                     <%
-                    DaoCandidato daoCandidato = new DaoCandidato();
-                    
+                    DaoCandidato daoCandidato = new DaoCandidato();                   
                     %>
                     <div class="col-lg-6">
                         <div class="login_form_inner">

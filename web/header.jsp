@@ -3,7 +3,10 @@
     Created on : 05/05/2019, 20:49:59
     Author     : Rafael
 --%>
-
+<%@page import="br.com.siteadocao.model.Candidato"%>
+<%
+    Candidato usuario = (Candidato) session.getAttribute("usuario");
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -43,6 +46,11 @@
                                                 </li>
                                             </ul>
                                         </li>
+                                        <%if(usuario != null){%>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href=""><%=usuario.getNome()%></a>
+                                        </li>
+                                        <%}%>
                                     </ul>
                                 </div>
 

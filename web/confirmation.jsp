@@ -4,8 +4,12 @@
     Author     : Rafael
 --%>
 
+<%@page import="br.com.siteadocao.dao.DaoPet"%>
 <%@page import="br.com.siteadocao.model.Pet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    session.getAttribute("usuario");
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -36,13 +40,16 @@
         <!--================Home Banner Area =================-->
         <%@include file="homeBannerProduto.jsp"%>
         <!--================End Home Banner Area =================-->
+        
         <%
             Pet p = (Pet) request.getAttribute("pet");
+            
+            if(usuario != null){
         %>
         <!--================Order Details Area =================-->
         <section class="order_details p_120">
             <div class="container">
-                <h3 class="title_confirmation">Obrigado me escolher!.</h3>
+                <h3 class="title_confirmation">Obrigado me escolher <%=usuario.getNome()%>!.</h3>
                 <div class="row order_d_inner">
                     <div class="col-lg-4">
                         <div class="details_item">
@@ -97,7 +104,21 @@
                     </div>
                 </div>
                 <div class="order_details_table">
-
+                    
+                    <%
+                        p.setNovoDono(usuario.getNome());
+                        p.setAdotado(true);
+                        DaoPet daoPet = new DaoPet();
+                        daoPet.update(p);
+                        
+                    %>
+        <%
+            }else{
+        %> 
+        <a class="nav-link" href="login.jsp" style="margin-top: 8%;padding-left: 36%;"><h5><Strong>Parece que você não está logado. Clique aqui e tente novamente.</Strong></h5></a>
+        <%
+            }
+        %>
         <!--================ start footer Area  =================-->
         <%@include file="footer.jsp"%>
         <!--================ End footer Area  =================-->

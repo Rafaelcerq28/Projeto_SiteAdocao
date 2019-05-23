@@ -6,6 +6,7 @@
 package br.com.siteadocao.dao;
 
 import br.com.siteadocao.factory.ConnectionFactory;
+import br.com.siteadocao.model.Candidato;
 import br.com.siteadocao.model.Pet;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -29,7 +30,18 @@ public class DaoPet implements Dao{
 
     @Override
     public boolean update(Object object) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Pet p  = (Pet) object;
+        try{
+            String sql = "UPDATE PET SET nome_dono = ? where id = ?";
+            PreparedStatement stmt = new ConnectionFactory().getConnection().prepareStatement(sql);
+            stmt.setString(1, p.getNovoDono());
+            stmt.setInt(2, p.getId());
+            stmt.executeUpdate();
+            return true;
+        }catch(SQLException ex){
+            Logger.getLogger(DaoCandidato.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
     }
 
     @Override
@@ -45,6 +57,7 @@ public class DaoPet implements Dao{
             String sql = "select * from pet where id = ?";
             PreparedStatement stmt = new ConnectionFactory().getConnection().prepareStatement(sql);                      
             stmt.setInt(1, id);
+          
             ResultSet rs = stmt.executeQuery();
             Pet p = new Pet();
             
@@ -62,7 +75,8 @@ public class DaoPet implements Dao{
                     p.setTelefone(rs.getString("telefone"));
                     p.setAdotado(rs.getBoolean("adotado"));
                     p.setFoto(rs.getString("caminho_imagem"));
-                    p.setDescricao(rs.getString("descricao"));                          
+                    p.setDescricao(rs.getString("descricao"));
+                    p.setNovoDono(rs.getString("nome_dono"));
             }
             stmt.close();
             return p;          
@@ -93,7 +107,8 @@ public class DaoPet implements Dao{
                     rs.getString("telefone"),
                     rs.getBoolean("adotado"),
                     rs.getString("caminho_imagem"),
-                    rs.getString("descricao")                   
+                    rs.getString("descricao"),
+                    rs.getString("nome_dono")  
                 );
                 lstPet.add(p);
             }
@@ -126,7 +141,8 @@ public class DaoPet implements Dao{
                     rs.getString("telefone"),
                     rs.getBoolean("adotado"),
                     rs.getString("caminho_imagem"),
-                    rs.getString("descricao")                   
+                    rs.getString("descricao"),
+                    rs.getString("nome_dono")    
                 );
                 lstPet.add(p);
             }
