@@ -15,7 +15,8 @@ To run this project on your machine, you'll need the following tools:
 ## How to Run the Project
 
 1. Clone the repository on your machine:
-git clone https://github.com/your-username/your-project.git
+
+git clone https://github.com/Rafaelcerq28/Projeto_SiteAdocao.git
 
 2. Import the project into your preferred IDE (Eclipse, IntelliJ, etc.).
 
