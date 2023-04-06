@@ -15,9 +15,9 @@ To run this project on your machine, you'll need the following tools:
 ## How to Run the Project
 
 1. Clone the repository on your machine:
-
+```
 git clone https://github.com/Rafaelcerq28/Projeto_SiteAdocao.git
-
+```
 2. Import the project into your preferred IDE (Eclipse, IntelliJ, etc.).
 
 3. Install the MySQL database in your computer and run `script.sql` file, it is inside of DAO folder.
