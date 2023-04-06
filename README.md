@@ -19,11 +19,7 @@ git clone https://github.com/your-username/your-project.git
 
 2. Import the project into your preferred IDE (Eclipse, IntelliJ, etc.).
 
-3. Configure the MySQL database connection using the information in the `config.properties` file.
-
-4. Compile and run the project on Apache Tomcat.
-
-5. Access the website through your preferred web browser.
+3. Install the MySQL database in your computer and run `script.sql` file, it is inside of DAO folder.
 
 ## Contributions
 
